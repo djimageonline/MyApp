@@ -1,3 +1,23 @@
-<p>books works!</p>
+<p>Programing Books List!</p>
 
-{{ cow }}
+<button (click)="isShowing =!isShowing">
+  <ng-container *ngIf="!isShowing">Show Books</ng-container>
+  <ng-container *ngIf="isShowing">Hide Books</ng-container>
+</button>
+
+<!-- <input type="text" [(ngModel)]="myName"/>
+<p>{{ myName }}</p> -->
+
+<ul *ngIf="isShowing">
+  <ng-container *ngFor="let book of books; let i=index">
+    <li class="book">
+      <p class="sno">{{ i + 1 }}</p>
+      <img src="{{ book.image }}" alt="{{ book.name }}" width="100" />
+      <p>{{ book.name | titlecase }} by {{ book.author | titlecase }}</p>
+      <p class="currency">{{ book.amount | currency }}</p>
+    </li>
+  </ng-container>
+</ul>
+
+
+
