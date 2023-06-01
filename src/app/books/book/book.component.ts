@@ -15,6 +15,8 @@ export class BookComponent {
 
   constructor(private cartService: CartService) {}
 
+  // using from cart service to implement in button in HTML
+
   addToCart() {
     this.isInCart = true
     this.cartService.add(this.book);
